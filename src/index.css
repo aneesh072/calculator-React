@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 16px;
 }
 
 .calculator {
@@ -71,14 +72,13 @@ button:hover {
   font-weight: 700;
 }
 
-.digits{
-    display: flex;
-    flex-wrap: wrap;
-
+.digits {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.digits button{
-    flex: 1 1 33.3333%;
-    max-width: 33.3333%;
-    background-color: var(--dark);
+.digits button {
+  flex: 1 1 33.3333%;
+  max-width: 33.3333%;
+  background-color: var(--dark);
 }
