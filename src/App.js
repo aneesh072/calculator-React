@@ -14,6 +14,10 @@ const App = () => {
       return;
     }
     setCalc(calc + value);
+
+    if (!ops.includes(value)) {
+      setResult(eval(calc + value).toString());
+    }
   };
 
   const createDigits = () => {
@@ -28,11 +32,15 @@ const App = () => {
     }
     return digits;
   };
+
+  const calculate = () => {
+    setCalc(eval(calc).toString());
+  };
   return (
     <div className="App">
       <div className="calculator">
         <div className="display">
-          {result ? <span>(0)</span> : ''}
+          {result ? <span>({result})</span> : ''}
           {calc || '0'}
         </div>
         <div className="operators">
@@ -48,7 +56,7 @@ const App = () => {
           <button onClick={() => updateCalc('0')}>0</button>
           <button onClick={() => updateCalc('.')}>.</button>
 
-          <button>=</button>
+          <button onClick={calculate}>=</button>
         </div>
       </div>
     </div>
